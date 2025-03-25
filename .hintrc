@@ -5,7 +5,8 @@
   "hints": {
     "typescript-config/strict": "off",
     "typescript-config/consistent-casing": "off",
-    "compat-api/html": "off"
+    "compat-api/html": "off",
+    "no-inline-styles": "off"
   },
   "browserslist": [
     "defaults",
