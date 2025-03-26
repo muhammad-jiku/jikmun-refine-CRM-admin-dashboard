@@ -1,25 +1,25 @@
 import { useNotificationProvider } from '@refinedev/antd';
 import '@refinedev/antd/dist/reset.css';
-import { Authenticated, GitHubBanner, Refine } from '@refinedev/core';
+import {
+  Authenticated,
+  // GitHubBanner,
+  Refine,
+} from '@refinedev/core';
 import { DevtoolsPanel, DevtoolsProvider } from '@refinedev/devtools';
 import { RefineKbar, RefineKbarProvider } from '@refinedev/kbar';
-import {} from // dataProvider,
-'@refinedev/nestjs-query';
 import routerBindings, {
   CatchAllNavigate,
   DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from '@refinedev/react-router';
 import { App as AntdApp } from 'antd';
+('@refinedev/nestjs-query');
 // import { createClient } from 'graphql-ws';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router';
 import Layout from './components/layout';
+import { resources } from './config/resources';
 import { CompanyList, ForgotPassword, Home, Login, Register } from './pages';
 import Create from './pages/company/Create';
-// import EditPage from './pages/company/Edit';
-// import TasksCreatePage from './pages/tasks/Create';
-// import TasksEditPage from './pages/tasks/Edit';
-import { resources } from './config/resources';
 import Edit from './pages/company/Edit';
 import CreateTask from './pages/tasks/Create';
 import EditTask from './pages/tasks/Edit';
@@ -35,11 +35,12 @@ import { authProvider, dataProvider, liveProvider } from './providers';
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
+      {/* <GitHubBanner /> */}
       <RefineKbarProvider>
         <AntdApp>
           <DevtoolsProvider
-          // url='http://refine-devtools.local'
+          // url='https://api.crm.refine.dev/'
+          // url='http://devtools.local'
           >
             <Refine
               dataProvider={dataProvider}
