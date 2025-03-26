@@ -20,8 +20,10 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src", "vite.config.ts"],
+  // "include": ["src", "vite.config.ts"],
   // "exclude": ["node_modules", "**/*.d.ts", "vite.config.d.ts"],
+  "include": ["src"],
+  "exclude": ["vite.config.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
