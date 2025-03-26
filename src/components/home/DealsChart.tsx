@@ -33,39 +33,29 @@ const DealsChart = () => {
     data: dealData,
     xField: 'timeText',
     yField: 'value',
-    stack: false,
+    isStack: false,
     seriesField: 'state',
-    // animation: true, // Removed to match the AreaConfig type
-    // startOnZero: false, // Removed to match the AreaConfig type
-    // meta: {
-    //   value: { min: 0 },
-    // },
-    // smooth: true, // Removed to match the AreaConfig type
-    line: { smooth: true },
+    animation: true,
+    startOnZero: false,
+    smooth: true,
     legend: {
       offsetY: -6,
     },
-    // yAxis: {
-    //   tickCount: 4,
-    //   label: {
-    //     formatter: (v: string) => `$${Number(v) / 1000}k`,
-    //   },
-    // },
-    axis: {
-      y: {
-        tickCount: 4,
-        label: {
-          formatter: (v: string) => `$${Number(v) / 1000}k`,
+    yAxis: {
+      tickCount: 4,
+      label: {
+        formatter: (v: string) => {
+          return `$${Number(v) / 1000}k`;
         },
-        // To force the axis to start at zero, you can set the minimum value:
-        min: 0,
       },
     },
     tooltip: {
-      formatter: (data: { state: any; value: any }) => ({
-        name: data.state,
-        value: `$${Number(data.value) / 1000}k`,
-      }),
+      formatter: (data) => {
+        return {
+          name: data.state,
+          value: `$${Number(data.value) / 1000}k`,
+        };
+      },
     },
   };
 

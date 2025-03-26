@@ -17,84 +17,40 @@ const DashboardTotalCountCard = ({
   const { primaryColor, secondaryColor, icon, title } =
     totalCountVariants[resource];
 
-  //   const config: AreaConfig = {
-  //     data: totalCountVariants[resource].data,
-  //     xField: 'index',
-  //     yField: 'value',
-  //     appendPadding: [1, 0, 0, 0],
-  //     padding: 0,
-  //     syncViewPadding: true,
-  //     autoFit: true,
-  //     tooltip: false,
-  //     animation: false,
-  //     xAxis: false,
-  //     yAxis: {
-  //       tickCount: 12,
-  //       label: {
-  //         style: {
-  //           stroke: 'transparent'
-  //         }
-  //       },
-  //       grid: {
-  //         line: {
-  //           style: {
-  //             stroke: 'transparent'
-  //           }
-  //         }
-  //       }
-  //     },
-  //     smooth: true,
-  //     line: {
-  //       color: primaryColor,
-  //     },
-  //     areaStyle: () => {
-  //       return {
-  //         fill: `l(270) 0:#fff 0.2${secondaryColor} 1:${primaryColor}`
-  //       }
-  //     }
-  //   }
-
   const config: AreaConfig = {
     data: totalCountVariants[resource].data,
     xField: 'index',
     yField: 'value',
-    // Use padding instead of appendPadding; adjust as needed.
+    appendPadding: [1, 0, 0, 0],
     padding: 0,
+    syncViewPadding: true,
     autoFit: true,
     tooltip: false,
-    // Remove syncViewPadding and animation from the top level.
-    // Replace xAxis and yAxis with a unified axis configuration:
-    axis: {
-      x: false,
-      y: {
-        tickCount: 12,
-        label: {
+    animation: false,
+    xAxis: false,
+    yAxis: {
+      tickCount: 12,
+      label: {
+        style: {
+          stroke: 'transparent',
+        },
+      },
+      grid: {
+        line: {
           style: {
             stroke: 'transparent',
           },
         },
-        grid: {
-          line: {
-            style: {
-              stroke: 'transparent',
-            },
-          },
-        },
       },
     },
-    // Move smooth into the line configuration:
+    smooth: true,
     line: {
-      smooth: true,
       color: primaryColor,
-      // If you need to disable animations on the line, check if adding
-      // an animation option here is supported in your version.
-      // animation: false, // Uncomment if supported.
     },
-    // Replace areaStyle with the new area configuration:
-    area: {
-      style: () => ({
+    areaStyle: () => {
+      return {
         fill: `l(270) 0:#fff 0.2${secondaryColor} 1:${primaryColor}`,
-      }),
+      };
     },
   };
 

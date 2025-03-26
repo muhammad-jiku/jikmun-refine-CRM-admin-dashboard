@@ -1,4 +1,3 @@
-export { Header } from './header';
 export * from './shared/Accordion';
 export * from './shared/Text';
 export * from './tags/UserTag';
